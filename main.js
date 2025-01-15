@@ -30,3 +30,19 @@ function operate(num1, num2, operator) {
     }
 }
 
+const calculatorFrame = document.querySelector("#calculator-frame")
+const calculatorBody = document.querySelector("#calculator-body")
+const calculatorDisplay = document.querySelector("#calculator-display")
+
+// create display
+const calcDisplay = document.createElement('div')
+calcDisplay.classList.add("display")
+calculatorDisplay.appendChild(calcDisplay)
+
+// create buttons for operations & numbers
+for (let i = 0; i < 18; i++) {
+    const calcBtn = document.createElement('div')
+    calcBtn.classList.add("operators")
+    calcBtn.textContent = i
+    calculatorBody.appendChild(calcBtn)
+}
