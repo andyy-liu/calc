@@ -32,17 +32,26 @@ function operate(num1, num2, operator) {
 
 const calculatorFrame = document.querySelector("#calculator-frame")
 const calculatorBody = document.querySelector("#calculator-body")
-const calculatorDisplay = document.querySelector("#calculator-display")
 
-// create display
-const calcDisplay = document.createElement('div')
-calcDisplay.classList.add("display")
-calculatorDisplay.appendChild(calcDisplay)
 
 // create buttons for operations & numbers
-for (let i = 0; i < 18; i++) {
-    const calcBtn = document.createElement('div')
-    calcBtn.classList.add("operators")
-    calcBtn.textContent = i
-    calculatorBody.appendChild(calcBtn)
-}
+// for (let i = 0; i < 10; i++) {
+//     const calcBtn = document.createElement('div')
+//     calcBtn.classList.add("operators")
+//     calcBtn.textContent = i
+//     calculatorBody.appendChild(calcBtn)
+// }
+
+
+// displaying numbers & operators on press and storing them
+let calcDisplay = document.querySelector("#calculator-output")
+let numInput1 = 0
+
+
+const userNumInput = document.querySelectorAll(".numbers")
+userNumInput.forEach(box => {
+    box.addEventListener("click", () => {
+        calcDisplay.textContent += box.textContent
+        numInput1 += box.textContent
+    })
+})
